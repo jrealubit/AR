@@ -22,8 +22,8 @@ function setup() {
   // you need to make sure to reference both the OBJ and MTL file here (geometry & material are stored separately)
   // refer to the 'index.html' file to see how these were pre-loaded into the scene
   model = new OBJ({
-	asset: 'model_obj',
-	mtl: 'model_mtl',
+	asset: 'Tree2_obj',
+	mtl: 'Tree2_mtl',
 	x: 0,
 	y: 0,
 	z: 0,

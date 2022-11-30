@@ -16,6 +16,9 @@ var coins = [];
 // points
 var points = 0;
 
+//count to switch between colors
+var count = 0;
+
 // this is a major hack, but if you plan on using getScreenPosition on a mobile device you have to load an image or other media file here
 // the reason has to do with the fact that the AR.js camera system takes some time to initialize, and this process pauses while the user
 // is providing their consent to turn on their camera via a pop-up box.  however, p5 will continue executing behind the scenes and will set
@@ -44,9 +47,18 @@ function draw() {
   if (markerHiro.isVisible() == true) {
     // get the position of this marker
     var hPos = markerHiro.getScreenPosition();
-    //draw black ellipse on marker
-    fill(0);
-    ellipse(hPos.x, hPos.y, 50);
+    
+
+    //draw alternating color square on marker
+    if(count % 2 == 0){
+      fill("#702963"); //Byzantium
+    }
+    else{
+      fill("#F28500"); //tangerine
+    }   
+
+    square(hPos.x, hPos.y, 50);
+    count = count + 1;
   
   }
 
